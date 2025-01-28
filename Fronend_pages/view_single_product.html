@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Product</title>
+    <script>
+        async function fetchProduct() {
+            const productId = window.location.pathname.split('/')[2]; // Get product ID from URL
+            const response = await fetch(`http://localhost:8080/api/products/${productId}`);
+            const product = await response.json();
+            document.getElementById('product-name').innerText = product.name;
+            document.getElementById('product-price').innerText = `$${product.price}`;
+            document.getElementById('product-stock').innerText = product.available_stock;
+            document.getElementById('product-rating').innerText = product.rating;
+        }
+
+        window.onload = fetchProduct;
+    </script>
+</head>
+<body>
+    <h1>View Product</h1>
+    <p><strong>Name:</strong> <span id="product-name"></span></p>
+    <p><strong>Price:</strong> <span id="product-price"></span></p>
+    <p><strong>Stock:</strong> <span id="product-stock"></span></p>
+    <p><strong>Rating:</strong> <span id="product-rating"></span></p>
+
+    <button onclick="window.location.href='/index.html'">Back to List</button>
+    <button onclick="window.location.href='/edit_product.html?id=' + window.location.pathname.split('/')[2]">Edit Product</button>
+</body>
+</html>
