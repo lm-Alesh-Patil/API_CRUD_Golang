@@ -12,7 +12,7 @@
     <div class="container mt-5">
         <h1 class="text-success text-center">Product Management</h1>
         <div class="text-center mt-4">
-            <a href="/create_product.html" class="btn btn-success">Add Products</a>
+            <a href="/Fronend_pages/create_product.html" class="btn btn-success">Add Products</a>
             <button id="logout" class="btn btn-danger">Logout</button>
         </div>
         <div id="products" class="mt-4">
@@ -47,7 +47,7 @@
                                 <p class="card-text">Available Stock: ${product.available_stock}</p>
                                 <p class="card-text">Rating: ${product.rating}/5</p>
                                 <div class="text-center">
-                                    <a href="/edit_product.html?id=${product.id}" class="btn btn-warning">Edit</a>
+                                    <a href="/Fronend_pages/edit_product.html?id=${product.id}" class="btn btn-warning">Edit</a>
                                     <button class="btn btn-danger" onclick="deleteProduct(${product.id})">Delete</button>
                                 </div>
                             </div>

@@ -50,8 +50,6 @@ func JWTAuth(next http.Handler) http.Handler {
 
 // validateToken function to validate the JWT token
 func validateToken(tokenString string) (*jwt.Token, error) {
-	// Specify the JWT secret key used for signing
-	// Replace "your_secret_key" with the actual secret key
 	return jwt.ParseWithClaims(tokenString, &handlers.Claims{}, func(token *jwt.Token) (interface{}, error) {
 		return []byte("alesh123"), nil
 	})

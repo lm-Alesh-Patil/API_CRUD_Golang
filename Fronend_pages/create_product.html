@@ -68,7 +68,7 @@
             .then(response => {
                 if (response.ok) {
                     alert('Product created successfully!');
-                    window.location.href = '/product_management.html';  // Redirect to a listing page or home page
+                    window.location.href = '/Fronend_pages/product_management.html';  // Redirect to a listing page or home page
                 } else {
                     response.json().then(errorData => {
                         alert('Error: ' + errorData.error);
